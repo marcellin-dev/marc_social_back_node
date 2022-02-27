@@ -129,7 +129,7 @@ module.exports.unlikePost = async (req, res) => {
         $pull: { likers: req.body.id },
       },
       { new: true },
-      (err, docs) => {
+      (err, docs) => { console.log(docs)
         if (err) return res.status(400).send(err);
       }
     );
